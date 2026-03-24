@@ -21,7 +21,6 @@
 
 @layer base {
   * {
-    @apply border-none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,12 +28,17 @@
   }
 
   body {
-    @apply bg-deep text-white antialiased overflow-x-hidden;
+    background-color: hsl(var(--deep));
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
     font-family: var(--font-main);
   }
 
   h1, h2, h3, h4, .font-display {
-    @apply font-bold tracking-tighter uppercase;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
 
   code, .font-mono {
@@ -45,13 +49,16 @@
 @layer components {
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    @apply w-1;
+    width: 4px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-deep;
+    background-color: hsl(var(--deep));
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface hover:bg-accent transition-colors;
+    background-color: hsl(var(--surface));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--accent));
   }
 }
 
