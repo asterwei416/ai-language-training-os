@@ -1,0 +1,56 @@
+{
+  "projectId": "5379415385882851843",
+  "name": "AI Language Training OS",
+  "version": "1.0.0",
+  "screens": [
+    {
+      "id": "9e7478df497f4d5594c3432a0b2ae9b0",
+      "title": "Reflex OS: Strategic Dashboard (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US1"
+    },
+    {
+      "id": "71ebe92e775b44f7a96838ce08391fa1",
+      "title": "Reflex OS: Reflex Lab (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US2"
+    },
+    {
+      "id": "275beb843811408293cd15e42e9c7ad7",
+      "title": "Reflex OS: Persona Squad (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US3"
+    },
+    {
+      "id": "6245954861c84671874a273ba0cac9ef",
+      "title": "Reflex OS: Identity & Calibration (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US4"
+    },
+    {
+      "id": "1ab5863c5d924056bcb1e27b75e62be7",
+      "title": "Reflex OS: Epic Journey (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US5"
+    },
+    {
+      "id": "bbb8a2d290ed4802970d24b9bd053d77",
+      "title": "Reflex OS: Daily Lens (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US6"
+    },
+    {
+      "id": "03a41e0bdb0d42d596f924ced408855d",
+      "title": "Reflex OS: Story Dialogue (English Fix)",
+      "deviceType": "MOBILE",
+      "userStory": "US5"
+    },
+    {
+      "id": "444c4548346645cc8fb55ed6329ebc2a",
+      "title": "Reflex OS: System States (Zurich Mono)",
+      "deviceType": "MOBILE",
+      "userStory": "US7"
+    }
+  ],
+  "components": {}
+}

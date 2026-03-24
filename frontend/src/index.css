@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Zurich Mono Palette (HSL for opacity support) */
+  --deep: 0 0% 5%;
+  --surface: 0 0% 11%;
+  --surface-bright: 0 0% 16%;
+  --accent: 211 100% 50%; /* #007aff */
+  --accent-bright: 211 100% 60%;
+  --muted: 0 0% 53%;
+  --danger: 0 100% 65%;
+
+  /* Typography */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  * {
+    @apply border-none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0px !important;
+  }
+
+  body {
+    @apply bg-deep text-white antialiased overflow-x-hidden;
+    font-family: var(--font-main);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-bold tracking-tighter uppercase;
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-deep;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface hover:bg-accent transition-colors;
+  }
+}
+
+/* Global Transition Rules */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
