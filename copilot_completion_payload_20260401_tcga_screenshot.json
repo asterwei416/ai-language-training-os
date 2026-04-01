@@ -1,0 +1,27 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[11:22] Playwright 擷取 tcga.twjoin.app 截圖",
+  "objective": [
+    "使用 Playwright 開啟 https://tcga.twjoin.app/ 並產生可用的頁面截圖。",
+    "確認首次空白截圖是載入時機問題還是網站本身無法在自動化環境渲染。"
+  ],
+  "reflective": [
+    "第一次直接用 Playwright CLI 截圖時得到白畫面，但那不代表網站壞掉，常見原因是 SPA 或首頁大型資源尚未完成渲染。",
+    "在這種情況下，先用 CLI 參數延長等待時間比安裝額外依賴或修改專案更快，也更符合最小變更原則。"
+  ],
+  "interpretive": [
+    "這個站點在 Playwright 下可正常開啟，但首頁會先經過較長的前端載入流程，太早截圖容易只拿到白頁。",
+    "加入 15 秒等待後，首頁主視覺、公告彈窗與下方內容區塊都有正確出現在截圖中。"
+  ],
+  "decisional": [
+    "本次保留成功的等待版截圖作為交付物，並未安裝本地 playwright 套件到專案依賴中，避免污染工作區。",
+    "將 HAR 一併輸出到工作區，方便後續若要追查首頁載入慢或自動化差異時直接使用。"
+  ],
+  "global_lessons": [
+    "如果 Playwright 首次截圖只有白畫面，先用 CLI 的 wait-for-timeout 或 wait-for-selector 重試，通常比立刻懷疑網站壞掉更有效。"
+  ],
+  "project_context": [
+    "本次成功截圖檔案為 tcga-twjoin-home-waited.png，內容包含首頁公告彈窗與主要版面。",
+    "本次另外輸出了 tcga-twjoin-home.har，可用於追查 tcga.twjoin.app 在自動化環境下的載入行為。"
+  ]
+}

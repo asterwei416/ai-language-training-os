@@ -1,0 +1,26 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[10:08] 安裝 mcp-playwright",
+  "objective": [
+    "將 executeautomation 的 Playwright MCP server 接入目前 VS Code + Copilot 的 user-level MCP 設定。",
+    "沿用現有 github.copilot.chat.mcpServers 格式，避免引入新的設定結構變數。"
+  ],
+  "reflective": [
+    "目前環境已經有穩定運作的 user-level MCP 設定，因此直接接到現有 settings.json 是風險最低的做法。",
+    "mcp-playwright 用 npx 啟動即可，不需要先做全域 npm 安裝，也不需要先手動安裝瀏覽器。"
+  ],
+  "interpretive": [
+    "對這台機器而言，Playwright MCP 比任務管理型 MCP 更符合目前需求，因為它直接補上真實瀏覽器互動能力。",
+    "安裝完成後真正生效仍依賴 VS Code 重新載入 MCP 設定。"
+  ],
+  "decisional": [
+    "本次採用 user-level settings.json 加入 playwright MCP，而不是 project-level .vscode/mcp.json，以符合既有 global-first 工作流。",
+    "server 設定使用 npx -y @executeautomation/playwright-mcp-server，避免額外維護全域安裝版本。"
+  ],
+  "global_lessons": [
+    "當既有 MCP 設定已在 user settings 穩定運作時，新增同類型 server 最穩的做法通常是沿用同一設定面，而不是混用另一種 project-level 格式。"
+  ],
+  "project_context": [
+    "本次已在 C:/Users/trist/AppData/Roaming/Code/User/settings.json 的 github.copilot.chat.mcpServers 區塊新增 playwright server。"
+  ]
+}

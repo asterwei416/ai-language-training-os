@@ -1,0 +1,28 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[07:43] 安裝 Context7 到 VS Code Copilot",
+  "objective": [
+    "確認 upstash/context7 的快速安裝是否適用於 VS Code + GitHub Copilot。",
+    "在不干擾現有 workspace 設定的前提下，完成可用的 Context7 安裝。"
+  ],
+  "reflective": [
+    "Context7 的 ctx7 setup 雖然支援快速安裝，但主要針對 Cursor、Claude、OpenCode 等客戶端；直接用在 VS Code Copilot 上不如手動配置穩定。",
+    "這個 workspace 目前沒有任何既有的 Copilot MCP 設定，因此採用最小變更策略即可，不需要先做衝突清理。"
+  ],
+  "interpretive": [
+    "VS Code 現行的 MCP 配置入口是 mcp.json，而不是舊式的 settings.json 欄位，這代表安裝方式應以官方 MCP schema 為主。",
+    "Context7 對 VS Code 最適合用遠端 HTTP MCP，加上 /mcp/oauth 端點讓登入與授權走 MCP OAuth 流程，避免手寫 API key。"
+  ],
+  "decisional": [
+    "依照使用者的 global-first 偏好，將 Context7 寫入 VS Code 使用者層級 mcp.json，而不是只綁定單一 workspace。",
+    "不執行 Context7 自帶的 quick setup，改採手動 MCP 註冊，因為這在 VS Code + Copilot 環境下更可預期且更容易除錯。"
+  ],
+  "global_lessons": [
+    "當第三方工具提供 quick setup 但主要鎖定其他 AI 客戶端時，對 VS Code Copilot 最穩的做法通常是直接查 VS Code 的 mcp.json 官方 schema 後手動註冊。",
+    "在 VS Code 的 MCP 整合中，敏感資訊優先走 OAuth 端點或 input variables，不要沿用舊版 settings.json 習慣把憑證硬塞進設定值。"
+  ],
+  "project_context": [
+    "ai-language-training-os workspace 的 .vscode/settings.json 目前沒有任何 github.copilot.chat.mcpServers 或 MCP 相關設定。",
+    "本次 Context7 安裝寫入的是全域 VS Code 使用者設定檔 C:/Users/trist/AppData/Roaming/Code/User/mcp.json，server 名稱為 context7，端點為 https://mcp.context7.com/mcp/oauth。"
+  ]
+}

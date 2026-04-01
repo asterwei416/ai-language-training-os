@@ -1,0 +1,254 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Create project structure",
+        "description": "Create project structure (backend/src, frontend/src) per implementation plan",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "details": "Phase 1: Setup"
+      },
+      {
+        "id": 2,
+        "title": "Initialize Node.js backend",
+        "description": "Initialize Node.js backend with Express/Socket.io dependencies in backend/package.json",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [1],
+        "details": "Phase 1: Setup"
+      },
+      {
+        "id": 3,
+        "title": "Initialize React frontend via Vite",
+        "description": "Initialize React frontend via Vite in frontend/",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [1],
+        "details": "Phase 1: Setup"
+      },
+      {
+        "id": 4,
+        "title": "Configure ESLint and Prettier",
+        "description": "Configure shared linting (ESLint) and formatting (Prettier) in repo root",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [1],
+        "details": "Phase 1: Setup [P]"
+      },
+      {
+        "id": 5,
+        "title": "Implement Backend AI Proxy Service",
+        "description": "Implement Backend AI Proxy Service for OpenAI SDK in backend/src/services/ai_proxy.ts",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [2],
+        "details": "Phase 2: Foundational [P]"
+      },
+      {
+        "id": 6,
+        "title": "Setup PostgreSQL connection pool",
+        "description": "Setup PostgreSQL connection pool in backend/src/lib/db.ts (per data-model.md)",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [2],
+        "details": "Phase 2: Foundational [P]"
+      },
+      {
+        "id": 7,
+        "title": "Implement Graceful Degradation trigger",
+        "description": "Implement Graceful Degradation (Read-only mode) trigger in frontend/src/hooks/useOffline.ts",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [3],
+        "details": "Phase 2: Foundational [P]"
+      },
+      {
+        "id": 8,
+        "title": "Configure DOMPurify for input sanitization",
+        "description": "Configure DOMPurify for user input sanitization in frontend/src/utils/security.ts",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [3],
+        "details": "Phase 2: Foundational [P]"
+      },
+      {
+        "id": 9,
+        "title": "[US1] Create Analysis model and schema",
+        "description": "Create Analysis model and schema in backend/src/models/analysis.ts",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [5, 6],
+        "details": "Phase 3: US1 - 4-Block Analysis [P]"
+      },
+      {
+        "id": 10,
+        "title": "[US1] Implement 4-Block Parsing Logic",
+        "description": "Implement 4-Block Parsing Logic (Instruction Engineering) in backend/src/services/analyzer.ts",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [5, 6],
+        "details": "Phase 3: US1 - 4-Block Analysis [P]"
+      },
+      {
+        "id": 11,
+        "title": "[US1] Create POST /api/v1/analyze endpoint",
+        "description": "Create POST /api/v1/analyze endpoint in backend/src/api/routes/analysis.ts",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [9, 10],
+        "details": "Phase 3: US1 - 4-Block Analysis"
+      },
+      {
+        "id": 12,
+        "title": "[US1] Build 4-Block Visualization Component",
+        "description": "Build 4-Block Visualization Component (Layered UI) in frontend/src/components/Analysis/BlockView.tsx",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [7, 8],
+        "details": "Phase 3: US1 - 4-Block Analysis [P]"
+      },
+      {
+        "id": 13,
+        "title": "[US1] Integrate analyzer with frontend text input",
+        "description": "Integrate analyzer with frontend text input in frontend/src/pages/Home.tsx",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [11, 12],
+        "details": "Phase 3: US1 - 4-Block Analysis"
+      },
+      {
+        "id": 14,
+        "title": "[US2] Create DrillUnit and Progress models",
+        "description": "Create DrillUnit and Progress models in backend/src/models/drill.ts",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [6],
+        "details": "Phase 4: US2 - Reflex Lab [P]"
+      },
+      {
+        "id": 15,
+        "title": "[US2] Implement Mastery-Based Progression Logic",
+        "description": "Implement Mastery-Based Progression Logic (80% gate) in backend/src/services/progression.ts",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [14],
+        "details": "Phase 4: US2 - Reflex Lab"
+      },
+      {
+        "id": 16,
+        "title": "[US2] Build Reflex Lab Scenario Selector",
+        "description": "Build Reflex Lab Scenario Selector in frontend/src/components/Lab/ScenarioPicker.tsx",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [13],
+        "details": "Phase 4: US2 - Reflex Lab [P]"
+      },
+      {
+        "id": 17,
+        "title": "[US2] Implement Four-Phase Learning Loop",
+        "description": "Implement Four-Phase Learning Loop (Infuse to Live) in frontend/src/modules/lab/LearningEngine.tsx",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [15, 16],
+        "details": "Phase 4: US2 - Reflex Lab"
+      },
+      {
+        "id": 18,
+        "title": "[US2] Implement Reaction Timer",
+        "description": "Implement Reaction Timer (3s/5s thresholds) in frontend/src/utils/timer.ts",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [16],
+        "details": "Phase 4: US2 - Reflex Lab"
+      },
+      {
+        "id": 19,
+        "title": "[US3] Setup Vector DB connection",
+        "description": "Setup Vector DB connection (Metadata filtering) in backend/src/lib/vector_store.ts",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [6],
+        "details": "Phase 5: US3 - Persona Squad [P]"
+      },
+      {
+        "id": 20,
+        "title": "[US3] Implement 30-Day Sliding Window Memory",
+        "description": "Implement 30-Day Sliding Window Memory Extraction in backend/src/services/memory.ts",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [19],
+        "details": "Phase 5: US3 - Persona Squad [P]"
+      },
+      {
+        "id": 21,
+        "title": "[US3] Implement Streaming Audio/Text Bridge",
+        "description": "Implement Streaming Audio/Text Bridge via Socket.io in backend/src/services/persona_bridge.ts",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [13, 19],
+        "details": "Phase 5: US3 - Persona Squad"
+      },
+      {
+        "id": 22,
+        "title": "[US3] Build Emotion Detection Integration",
+        "description": "Build Emotion Detection Integration (GPT-4o mini audio) in backend/src/services/emotion_analyzer.ts",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [19],
+        "details": "Phase 5: US3 - Persona Squad [P]"
+      },
+      {
+        "id": 23,
+        "title": "[US3] Create manual memory deletion UI",
+        "description": "Create 'Forget this topic' manual deletion UI in frontend/src/components/Persona/MemoryControl.tsx",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [20, 21],
+        "details": "Phase 5: US3 - Persona Squad"
+      },
+      {
+        "id": 24,
+        "title": "Finalize API documentation",
+        "description": "Finalize API documentation in docs/api_reference.md",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [11],
+        "details": "Phase 6: Polish [P]"
+      },
+      {
+        "id": 25,
+        "title": "Performance audit - ASR latency < 1s",
+        "description": "Performance audit: Ensure ASR Interaction Latency < 1s",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [13],
+        "details": "Phase 6: Polish"
+      },
+      {
+        "id": 26,
+        "title": "Run SC-010 validation",
+        "description": "Run SC-010 validation: Verify 'Forget this topic' deletes corresponding vector data",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [23],
+        "details": "Phase 6: Polish [P]"
+      },
+      {
+        "id": 27,
+        "title": "Run quickstart.md end-to-end validation",
+        "description": "Run quickstart.md validation for end-to-end flow",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [25, 26],
+        "details": "Phase 6: Polish"
+      }
+    ],
+    "metadata": {
+      "created": "2026-04-01",
+      "updated": "2026-04-01",
+      "description": "AI Language Training OS - Reflective Language OS"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "frontend": {
+    "loaded": true,
+    "url": "https://tcga.twjoin.app/",
+    "title": "中華公司治理協會",
+    "status": 200,
+    "bodyLength": 689,
+    "blockingPopup": true,
+    "popupSummary": [
+      {
+        "selector": "[role=\"dialog\"]",
+        "text": "2025-10-16XXX課程取消公告123456 123456我知道了關閉視窗"
+      }
+    ],
+    "consoleErrors": [],
+    "requestFailures": [
+      "GET https://tcga.twjoin.app/courses/public/introduce?_rsc=1r34m net::ERR_ABORTED",
+      "GET https://tcga.twjoin.app/announcement/updates?_rsc=1r34m net::ERR_ABORTED"
+    ],
+    "screenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401\\frontend-home.png"
+  },
+  "admin": {
+    "loginPageVisible": true,
+    "loginUrl": "https://admin-tcga.twjoin.app/admin/login",
+    "afterLoginUrl": "https://admin-tcga.twjoin.app/admin/login",
+    "loginSuccess": false,
+    "dashboardSignals": [],
+    "consoleErrors": [],
+    "requestFailures": [],
+    "postLoginScreenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401\\admin-after-login.png",
+    "firstPageLabel": null,
+    "firstPageUrl": null,
+    "firstPageLooksValid": false,
+    "firstPageScreenshot": null,
+    "bodyPreview": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入"
+  },
+  "runtimeErrors": []
+}

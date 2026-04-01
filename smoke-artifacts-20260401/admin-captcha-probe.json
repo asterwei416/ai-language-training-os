@@ -1,0 +1,12 @@
+{
+  "url": "https://admin-tcga.twjoin.app/admin/login",
+  "title": "Laravel",
+  "imgCount": 2,
+  "bodyPreview": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+  "captchaImg": {
+    "src": "https://admin-tcga.twjoin.app/captcha/default?yy2S4KnA",
+    "alt": "captcha",
+    "width": 150,
+    "height": 60
+  }
+}

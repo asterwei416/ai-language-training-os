@@ -1,0 +1,28 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[10:00] full-check 總驗通過",
+  "objective": [
+    "對記憶引擎執行完整總驗，確認 rename 修復後 hooks、prompts、references 與模擬流程全部健康。",
+    "修正 global memory-engine 腳本與模板內仍殘留的 Google_Antigravity 硬編碼路徑。"
+  ],
+  "reflective": [
+    "第一次 full-check 失敗時，真正壞掉的是 global-tools 內部腳本鏈，而不是使用者層 hook 設定。",
+    "只修 ~/.copilot 與 VS Code user settings 不夠，若 global tool 自己的模板與內部互相呼叫腳本還留舊路徑，總驗與未來安裝流程仍會失敗。"
+  ],
+  "interpretive": [
+    "pre-push check 之所以炸在 JSON 解析，是因為它呼叫的 check-agent-memory.ps1 路徑仍指向舊根目錄，導致回傳錯誤文字而非 JSON。",
+    "對共享工具倉來說，根目錄更名屬於系統級變更，必須同時更新執行腳本、模板 prompts、模板 hooks 與 installer 預設值。"
+  ],
+  "decisional": [
+    "本次採用對整個 copilot-memory-engine 目錄做字面 root-name replacement 的策略，避免只修單點而遺漏其他內部呼叫鏈。",
+    "full-check 驗證時顯式指定 WorkspacePath 為目前 ai-language-training-os，以避免工具預設值綁定其他專案造成結果偏差。"
+  ],
+  "global_lessons": [
+    "當共享工具本身也含有腳本互相呼叫與模板產生器時，路徑更名必須檢查工具目錄本身，不可只修使用者設定層。",
+    "如果 full-check 類工具抱怨某腳本沒有回傳 JSON，先檢查被呼叫腳本是否因舊路徑失效而輸出了錯誤文字。"
+  ],
+  "project_context": [
+    "本次 full-check-agent-memory.ps1 在指定 WorkspacePath 為 C:/Users/trist/Desktop/Vibe Coding/Side Project/ai-language-training-os 後回報 status healthy。",
+    "ai-language-training-os 這次順手把 C:/Users/trist/Desktop/Vibe Coding/global-tools/copilot-memory-engine 目錄內殘留的 Google_Antigravity 路徑一併清理完成。"
+  ]
+}

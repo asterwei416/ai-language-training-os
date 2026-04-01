@@ -1,0 +1,29 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[12:04] 續測 tcga 後台 session",
+  "objective": [
+    "從 https://admin-tcga.twjoin.app/admin/dashboard 直接驗證目前本機瀏覽器 session 是否可進入後台。",
+    "若可進入 dashboard，再進一步確認至少一個第一層管理頁不是空頁或錯誤頁。"
+  ],
+  "reflective": [
+    "這次續測的核心不是重跑登入流程，而是確認現有本機 session 是否仍有效，避免把『未登入』和『系統掛掉』混為一談。",
+    "當目標是驗證既有登入狀態時，測試重點應先放在 session 復用是否成功，再決定要不要往下檢查管理頁。"
+  ],
+  "interpretive": [
+    "以 Chrome Default、Chrome Profile 1、Edge Default、Edge Profile 1 四個常見本機 profile 複製後測試，直接開啟 dashboard URL 都被導回 /admin/login。",
+    "四次結果一致顯示 Laravel 登入頁與帳號、密碼、驗證碼欄位，沒有出現 dashboard 側欄、統計卡片或管理選單，因此目前沒有可直接復用的登入 session。",
+    "由於未能進入 dashboard，第一層管理頁讀取驗證無法成立，這次結果應定義為 fail，而不是 partial。"
+  ],
+  "decisional": [
+    "本次續測採用複製本機瀏覽器 profile 到暫存 user-data 的方式執行，避免直接用正在被 Chrome/Edge 佔用的 live profile 造成 lock 或污染。",
+    "在兩個最近活躍 profile 均失敗後，補測其餘常見 profile 再下結論，以降低誤判成『沒有 session』的風險。"
+  ],
+  "global_lessons": [
+    "當要驗證現有瀏覽器登入態時，先複製 live browser profile 到暫存 user-data 再自動化，比直接操作正在使用中的 profile 更穩定也更安全。",
+    "在 Windows 上如果 npx playwright CLI 可用但腳本 import 失敗，可直接從全域 npm 安裝路徑 require Playwright 套件，而不要誤以為只能先改專案依賴。"
+  ],
+  "project_context": [
+    "本次續測產物輸出於 smoke-artifacts-20260401-session-check，包含四個 profile 的 dashboard 截圖與 admin-session-continuation-result.json。",
+    "截至 2026-04-01，本機常見 Chrome/Edge profile 直接開啟 admin-tcga.twjoin.app/admin/dashboard 都會回到 /admin/login，未發現可直接復用的後台登入 session。"
+  ]
+}

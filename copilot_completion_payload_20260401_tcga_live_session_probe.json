@@ -1,0 +1,27 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[22:05] TCGA 後台 live session 驗證",
+  "objective": [
+    "沿用目前可用的後台瀏覽器登入態，從 dashboard 驗證第一層只讀管理頁是否能正常開啟。",
+    "避免任何新增、編輯、刪除或表單送出，只做導覽、判斷登入態與截圖取證。"
+  ],
+  "reflective": [
+    "專案內保存的 Playwright 持久化 session 先前曾成功顯示 dashboard 與 test1234，但本次重新驗證時已被導回登入頁。",
+    "直接複製一般 Chrome/Edge profile 與專案內 tcga-admin-session 都只拿到登入頁，顯示目前可重用的持久化 session 已失效。"
+  ],
+  "interpretive": [
+    "真正的障礙不是頁面導覽邏輯，而是無法從正在使用中的 Chrome Default profile 安全抽出仍有效的 Cookies；Cookies 資料庫在瀏覽器開啟時被鎖定，esentutl 也回報 JET_errFileAccessDenied。",
+    "在沒有 remote debugging 連線能力、也不能手動干預登入與驗證碼的前提下，無法程式化附著到使用者當前已登入分頁，因此這次只能得到 partial 結論。"
+  ],
+  "decisional": [
+    "本次維持只讀驗證邊界，不嘗試輸入帳密、驗證碼或送出任何登入表單。",
+    "當 live browser session 無法安全重用時，改以當前登入頁截圖與自動化 summary 作為阻塞證據，而不是偽造通過結果。"
+  ],
+  "global_lessons": [
+    "若要重用正在執行中的 Chrome 登入態，先確認是否能附著到既有瀏覽器；單靠複製 profile 常會被鎖定中的 Cookies DB 擋住。"
+  ],
+  "project_context": [
+    "TCGA 後台專案內的 .playwright-userdata/tcga-admin-session 曾有成功登入的舊狀態，但 2026-04-01 晚間重新驗證時已直接落回 /admin/login。",
+    "本次只讀驗證產物主要寫入 smoke-artifacts-20260401-followup，包含當前登入頁截圖與 admin-first-management-page.json 摘要。"
+  ]
+}

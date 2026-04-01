@@ -1,0 +1,28 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[08:15] 修正 Copilot 記憶引擎舊路徑",
+  "objective": [
+    "排除 Stop hook 因 Desktop 根目錄由 Google_Antigravity 改名為 Vibe Coding 而失效的問題。",
+    "同步修正仍會執行到舊根目錄的活躍記憶引擎、prompt 指令與 MCP 路徑設定。"
+  ],
+  "reflective": [
+    "錯誤訊息直接指出 invoke-copilot-stop-hook.ps1 找不到，但真正根因是整個記憶引擎設定群仍綁定舊資料夾名稱。",
+    "若只修 Stop hook，之後 save、sync、check 或 completion trigger 仍會在其他入口重新撞到相同問題。"
+  ],
+  "interpretive": [
+    "生效中的設定位於 C:/Users/trist/.copilot/hooks、C:/Users/trist/.copilot/instructions、VS Code User prompts 與 User settings，而不是 workspace 內程式碼。",
+    "在資料夾更名後，應優先搜尋所有活躍設定來源並排除 History/workspaceStorage 噪音，才能精準修到真正會執行的路徑。"
+  ],
+  "decisional": [
+    "本次採用一次性修正所有活躍入口的策略：hooks、completion trigger instruction、prompt commands、以及 notion MCP 路徑一併切到 Vibe Coding。",
+    "驗證方式採用腳本存在檢查、殘留路徑搜尋與 JSON 解析，不直接手動觸發 stop hook，以避免不必要副作用。"
+  ],
+  "global_lessons": [
+    "桌面或 workspace 根目錄更名後，Copilot hook 問題通常不是單一腳本遺失，而是整組 user-level hook、prompt、settings 仍指向舊絕對路徑。",
+    "排查 VS Code 路徑失效時，先排除 History 與 workspaceStorage 再搜尋活躍設定，可大幅降低噪音並更快定位真正生效的配置。"
+  ],
+  "project_context": [
+    "本機生效中的記憶引擎 hook 設定位於 C:/Users/trist/.copilot/hooks/global-memory-engine.json。",
+    "ai-language-training-os 這次順手修正了 VS Code User settings 內 notion-database-sync 的 MCP 路徑，已改為 C:/Users/trist/Desktop/Vibe Coding/global-skills/notion-database-sync/dist/index.js。"
+  ]
+}

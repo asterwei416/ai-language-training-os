@@ -1,0 +1,27 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[11:35] 執行 tcga 前後台 smoke test",
+  "objective": [
+    "對 tcga.twjoin.app 前台與 admin-tcga.twjoin.app 後台做一次最小可行 smoke test。",
+    "確認前台首頁可載入，以及後台登入流程的第一個實際阻擋點。"
+  ],
+  "reflective": [
+    "這次 smoke test 的價值不只是看網站有沒有開，而是找出流程上第一個真正阻斷自動化與人工驗證的點。",
+    "後台若有驗證碼，帳密正確與否通常不是第一個可驗證問題，測試結論應明確寫成『卡在驗證碼門檻』而不是誤判為登入失敗。"
+  ],
+  "interpretive": [
+    "前台首頁可正常渲染，包含公告彈窗、內容列表與下方區塊，表示基本前端服務與資源載入正常。",
+    "後台登入頁也可正常載入並接受帳密輸入，但送出時會被必填驗證碼攔下，因此目前無法確認登入後台主頁或帳密有效性。"
+  ],
+  "decisional": [
+    "本次將後台結果定義為 partial，而不是 fail，因為阻擋點是驗證碼而非已確認的帳密錯誤或系統錯誤。",
+    "保留前台首頁與後台登入阻擋畫面截圖，作為後續請站方提供測試驗證碼或關閉 captcha 時的對照基準。"
+  ],
+  "global_lessons": [
+    "當後台登入流程被 captcha 擋住時，最有價值的 smoke test 結論通常是驗證碼成為首個阻擋點，而不是急著判定帳密或後台功能有問題。"
+  ],
+  "project_context": [
+    "本次 smoke test 產物輸出於 smoke-artifacts-20260401 目錄，包含 frontend-home.png 與 admin-after-login.png。",
+    "tcga 後台登入頁目前要求必填驗證碼，未提供可自動化繞過機制時，無法完成登入後功能驗證。"
+  ]
+}

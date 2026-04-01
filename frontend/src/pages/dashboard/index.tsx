@@ -31,7 +31,8 @@ const ModuleCard = ({ title, description, icon, accent = "text-accent", onClick 
 );
 
 export default function Dashboard({ onNavigate }: { onNavigate: (page: string) => void }) {
-  const { user, lab } = useAppStore();
+  const { user, lessonHistory } = useAppStore();
+  const completedLessons = lessonHistory.length;
 
   return (
     <div className="flex flex-col gap-6">
@@ -45,7 +46,7 @@ export default function Dashboard({ onNavigate }: { onNavigate: (page: string) =
       <section className="grid gap-4">
         <ModuleCard 
           title="反射實驗室 (Reflex Lab)"
-          description={`核心反應訓練 // LV. ${lab.combo}`}
+          description={`意群切塊訓練 // ${completedLessons} 主題完成`}
           icon={<Zap size={24} />}
           onClick={() => onNavigate('lab')}
         />

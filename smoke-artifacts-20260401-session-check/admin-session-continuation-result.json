@@ -1,0 +1,105 @@
+{
+  "startedAt": "2026-04-01T04:02:13.059Z",
+  "dashboardUrl": "https://admin-tcga.twjoin.app/admin/dashboard",
+  "candidates": [
+    {
+      "candidate": "chrome-default",
+      "browserName": "Chrome",
+      "profileDir": "Default",
+      "dashboard": {
+        "url": "https://admin-tcga.twjoin.app/admin/login",
+        "title": "Laravel",
+        "bodyText": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+        "signals": {
+          "hits": [],
+          "keywordHits": []
+        },
+        "isLoginPage": true,
+        "looksLikeDashboard": false,
+        "screenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-session-check\\chrome-default-dashboard.png"
+      },
+      "managementPage": null,
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "responseErrors": [],
+      "copiedProfile": "C:\\Users\\trist\\AppData\\Local\\Temp\\tcga-chrome-default-mdgtl1",
+      "error": null
+    },
+    {
+      "candidate": "chrome-profile-1",
+      "browserName": "Chrome",
+      "profileDir": "Profile 1",
+      "dashboard": {
+        "url": "https://admin-tcga.twjoin.app/admin/login",
+        "title": "Laravel",
+        "bodyText": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+        "signals": {
+          "hits": [],
+          "keywordHits": []
+        },
+        "isLoginPage": true,
+        "looksLikeDashboard": false,
+        "screenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-session-check\\chrome-profile-1-dashboard.png"
+      },
+      "managementPage": null,
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "responseErrors": [],
+      "copiedProfile": "C:\\Users\\trist\\AppData\\Local\\Temp\\tcga-chrome-profile-1-sk33QY",
+      "error": null
+    },
+    {
+      "candidate": "edge-default",
+      "browserName": "Edge",
+      "profileDir": "Default",
+      "dashboard": {
+        "url": "https://admin-tcga.twjoin.app/admin/login",
+        "title": "Laravel",
+        "bodyText": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+        "signals": {
+          "hits": [],
+          "keywordHits": []
+        },
+        "isLoginPage": true,
+        "looksLikeDashboard": false,
+        "screenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-session-check\\edge-default-dashboard.png"
+      },
+      "managementPage": null,
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "responseErrors": [],
+      "copiedProfile": "C:\\Users\\trist\\AppData\\Local\\Temp\\tcga-edge-default-RF1X9j",
+      "error": null
+    },
+    {
+      "candidate": "edge-profile-1",
+      "browserName": "Edge",
+      "profileDir": "Profile 1",
+      "dashboard": {
+        "url": "https://admin-tcga.twjoin.app/admin/login",
+        "title": "Laravel",
+        "bodyText": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+        "signals": {
+          "hits": [],
+          "keywordHits": []
+        },
+        "isLoginPage": true,
+        "looksLikeDashboard": false,
+        "screenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-session-check\\edge-profile-1-dashboard.png"
+      },
+      "managementPage": null,
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "responseErrors": [],
+      "copiedProfile": "C:\\Users\\trist\\AppData\\Local\\Temp\\tcga-edge-profile-1-ICQhQt",
+      "error": null
+    }
+  ],
+  "selected": null,
+  "finishedAt": "2026-04-01T04:04:42.253Z",
+  "artifactDir": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-session-check"
+}

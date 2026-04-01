@@ -1,0 +1,161 @@
+{
+  "dashboardUrl": "https://admin-tcga.twjoin.app/admin/dashboard",
+  "sourceUserDataDir": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\.playwright-userdata\\tcga-admin-session",
+  "tempUserDataDir": "C:\\Users\\trist\\AppData\\Local\\Temp\\tcga-followup-YYPruu",
+  "dashboardScreenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-followup\\admin-dashboard-followup.png",
+  "managementScreenshot": "C:\\Users\\trist\\Desktop\\Vibe Coding\\Side Project\\ai-language-training-os\\smoke-artifacts-20260401-followup\\admin-first-management-page.png",
+  "target": null,
+  "managementPage": null,
+  "sidebarElements": [
+    {
+      "tag": "div",
+      "text": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+      "href": "",
+      "className": "container",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+      "href": "",
+      "className": "row mt-5",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+      "href": "",
+      "className": "col-12 col-sm-10 col-md-8 col-lg-5 m-auto",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "帳號 * 密碼 * visibility 驗證碼 * autorenew 登入",
+      "href": "",
+      "className": "mx-auto my-5 px-2 py-5 border border-dark rounded-4",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "帳號 *",
+      "href": "",
+      "className": "row mb-3",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "帳號 *",
+      "href": "",
+      "className": "col",
+      "visible": true
+    },
+    {
+      "tag": "span",
+      "text": "*",
+      "href": "",
+      "className": "text-danger",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "密碼 * visibility",
+      "href": "",
+      "className": "row mb-3",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "密碼 * visibility",
+      "href": "",
+      "className": "col",
+      "visible": true
+    },
+    {
+      "tag": "span",
+      "text": "*",
+      "href": "",
+      "className": "text-danger",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "visibility",
+      "href": "",
+      "className": "input-group",
+      "visible": true
+    },
+    {
+      "tag": "button",
+      "text": "visibility",
+      "href": "",
+      "className": "btn border-start-0 py-0 border-dark",
+      "visible": true
+    },
+    {
+      "tag": "span",
+      "text": "visibility",
+      "href": "",
+      "className": "material-symbols-outlined text-secondary mt-2",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "驗證碼 * autorenew",
+      "href": "",
+      "className": "row mb-3",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "驗證碼 * autorenew",
+      "href": "",
+      "className": "col-6",
+      "visible": true
+    },
+    {
+      "tag": "span",
+      "text": "*",
+      "href": "",
+      "className": "text-danger",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "autorenew",
+      "href": "",
+      "className": "input-group",
+      "visible": true
+    },
+    {
+      "tag": "button",
+      "text": "autorenew",
+      "href": "",
+      "className": "btn border-start-0 py-0 border-dark",
+      "visible": true
+    },
+    {
+      "tag": "span",
+      "text": "autorenew",
+      "href": "",
+      "className": "material-symbols-outlined text-secondary mt-2",
+      "visible": true
+    },
+    {
+      "tag": "div",
+      "text": "登入",
+      "href": "",
+      "className": "d-flex justify-content-center pt-5",
+      "visible": true
+    },
+    {
+      "tag": "button",
+      "text": "登入",
+      "href": "",
+      "className": "btn btn-dark",
+      "visible": true
+    }
+  ],
+  "consoleMessages": [],
+  "pageErrors": [],
+  "requestFailures": []
+}

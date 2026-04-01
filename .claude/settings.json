@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx task-master:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(task-master init:*)",
+      "Bash(task-master add-task:*)",
+      "Bash(task-master list:*)",
+      "Bash(task-master next:*)",
+      "Bash(pnpm --version)",
+      "Bash(uv --version)",
+      "Read(//c/Users/trist/markdownify-mcp/**)",
+      "Bash(pnpm install:*)",
+      "Bash(python -m venv .venv)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(pnpm run:*)",
+      "Read(//c/Users/trist/.claude/**)"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "project": "ai-language-training-os",
+  "title": "[08:22] 驗證 hook 並清理殘留設定",
+  "objective": [
+    "驗證 Vibe Coding 新路徑下的記憶引擎 hook 與 prompt 指令是否實際健康。",
+    "清理使用者層活躍設定中殘留的 Google_Antigravity 路徑。"
+  ],
+  "reflective": [
+    "直接手動執行 stop hook 會卡住，看起來像失敗，但其實腳本設計就是從 stdin 讀 hook JSON；沒有 hook payload 時等待是正常行為。",
+    "真正要驗證 rename 修復是否完成，應看健康檢查與活躍設定掃描，而不是只看手動執行腳本是否立即結束。"
+  ],
+  "interpretive": [
+    "check-agent-memory.ps1 已回報 healthy，表示 hooks、prompts、instruction 與記憶引擎引用路徑已整體對齊新根目錄。",
+    "剩餘問題只在 VS Code User settings 的 auto-approve 規則，這些屬於非關鍵但仍會在特定終端命令上造成舊路徑命中。"
+  ],
+  "decisional": [
+    "stop hook 採讀檔檢視腳本方式驗證行為模型，而非強行模擬未知 payload；這樣能區分設計性等待與真正故障。",
+    "對高度跳脫的 settings.json regex 字串，最穩定的清理方式是做字面 root-name replacement 後再用 JSON 解析驗證。"
+  ],
+  "global_lessons": [
+    "對會從 stdin 讀事件 payload 的 hook 腳本，手動直接執行時若卡住，不代表壞掉；先看腳本入口是否在等待標準輸入。",
+    "當設定檔內含大量 regex 與跳脫字元時，精準 apply_patch 可能不穩，先限定檔案範圍再做字面 replace，最後一定補 JSON 解析驗證。"
+  ],
+  "project_context": [
+    "本次 check-agent-memory.ps1 回報狀態為 healthy，hook_Stop_invoke-copilot-stop-hook 指向 C:/Users/trist/Desktop/Vibe Coding/global-tools/copilot-memory-engine/invoke-copilot-stop-hook.ps1。",
+    "ai-language-training-os 本機 VS Code User settings 的 terminal auto-approve 舊根目錄規則已改為 Vibe Coding。"
+  ]
+}
